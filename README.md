@@ -2,6 +2,12 @@
 
 里面只有6.5的demo, 后续还会增加。
 其中 1－4 都是tree-shaking的尝试， 05 是chunk分离，06 是 code splitting。
+运行
+
+```sh
+npm run 00数字
+npm run 00数字-p //-p 一般是压缩版 带有min
+```
 
 ## tree-shaking
 
