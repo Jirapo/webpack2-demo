@@ -1,7 +1,7 @@
 #Webpack2 新功能尝试
 
 里面只有6.5的demo, 后续还会增加。
-其中 1－4 都是tree-shaking的尝试， 05 是chunk分离，06 是 code splitting。
+其中 01-04 都是tree-shaking的尝试， 05 是chunk分离，06 是 code splitting。
 `webpack1-result` 文件夹中放置的是01-04使用webpack1打包后的文件。
 运行
 
