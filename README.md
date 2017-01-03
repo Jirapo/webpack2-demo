@@ -71,7 +71,7 @@ function B() {
 /* unused harmony default export */ var _unused_webpack_default_export = B;
 ```
 
-有很多`unused`注释，而在`webpack1-result/001.js` 中没有这样的注释。
+有很多对`class B`的`unused`注释，而在`webpack1-result/001.js` 中没有这样的注释。
 
 运行`npm run 001-p`，找到`js/001.min.js`, 打开后会发现这样一段代码：
 
@@ -138,6 +138,8 @@ demo004-babili是把 004.js 当作main.js，在babili的壳上又经过babel和w
 ```
 
 看注释我们也能了解到，这是webpack为了mark死代码用的，所以，在极小极小的代码打包中，1.x 是优于 2.x, 可是你确定你的项目会跟demo一样只用几行语句么？！ 所以文件稍微多些，03的效果就很明显了。
+
+另外，大家请注意打包时间。1.x 是**2108ms**，2.x 是**1211ms**，这飞升般的体验，相当于以后上大号的时间改为上小号的时间了。当然我还没打包过大型项目，无法做出准确的对比。
 
 ## Caching
 demo05 是使用chunkhash做浏览器的cach方案的单页应用案例，原文请戳[这里](https://webpack.js.org/guides/caching/)。
