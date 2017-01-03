@@ -21,7 +21,7 @@ tree-shaking 的作用是消除死代码，比如有些方法写了根本没用�
 
 请看案例001：
 
-```
+```js
 // main.js
 import { A, B } from './components/index';
 let a = new A();
@@ -75,7 +75,7 @@ function B() {
 
 运行`npm run 001-p`，找到`js/001.min.js`, 打开后会发现这样一段代码：
 
-```
+```js
 function(n,t,e){"use strict";function r(){this.render=function(){return"AAAA"}}t.a=r}
 ```
 
@@ -111,7 +111,7 @@ demo004-babili是把 004.js 当作main.js，在babili的壳上又经过babel和w
 是不是觉得和想象中的不太一样，01，02，04居然是2.x的版本比1.x大！
 其实原因很容易发现，我们打开两个版本的合并文件，会发现2.x 多了这么一串东西：
 
-```
+```js
 /******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 
@@ -148,7 +148,7 @@ demo05 是使用chunkhash做浏览器的cach方案的单页应用案例，原文
 
 首先，我们需要配置两个入口,
 
-```
+```js
 entry: {
     '005': './main.js',
     'vendor': './vendor.js'
@@ -164,7 +164,7 @@ output: {
 其中`main.js`是页面入口，
 
 
-```
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -182,7 +182,7 @@ render();
 `vendor.js`放置是项目依赖，比如：
 
 
-```
+```js
 require('react');
 require('react-dom');
 ```
@@ -191,7 +191,7 @@ require('react-dom');
 
 dev环境配置如下：
 
-```
+```js
 new webpack.optimize.CommonsChunkPlugin({
     name: ['vendor', 'manifest'],
     minChunks: Infinity
@@ -211,7 +211,7 @@ new webpack.optimize.CommonsChunkPlugin({
 
 demo06 是code-splitting的小尝试。在 1.x 版本中，webpack是使用`require.ensure()`进行代码分离的。`require.ensure()`是commonJS风格的异步加载方式，使用回调函数把请求的组件传出去。其中加载的代码会分离到一个chunk块中。
 
-```
+```js
 require.ensure([], function(require){
     require('./a.js');
 });
@@ -219,7 +219,7 @@ require.ensure([], function(require){
 
 现在 2.x 新增了`import()`语法来动态加载资源，它是同步的。
 
-```
+```js
 async function getTemplate(templateName) {
 	try {
 		let template = await import(`./templates/${templateName}`);
@@ -233,7 +233,7 @@ async function getTemplate(templateName) {
 
 也可以使用`System.import()`, 它会返回一个`Promise`对象。但是因为会被弃用，所以demo里面不演示了。
 
-```
+```js
 System.import("b").then(function(b) {
 	console.log("b loaded", b);
 })
