@@ -2,10 +2,9 @@
 let path = require('path');
 
 module.exports = (options) => {
-    return {
-        entry: {
-            '002': './main.js'
-        },
+    return ['001', '001-0','002', '003', '004-babili'].map(en => {
+      let config = {
+        entry: {},
         output: {
             path: './js',
             filename: options.dev ? '[name].js' : '[name].min.js'
@@ -23,8 +22,10 @@ module.exports = (options) => {
             ]
         },
 
-
         devtool: false,
         context: __dirname
-    }
-}
+      }
+      config.entry[en] = `./${en}/main.js`
+      return config;
+    })
+  }

@@ -1,14 +1,16 @@
 'use strict';
 let path = require('path');
+let BabiliPlugin = require("babili-webpack-plugin");
+
 
 module.exports = (options) => {
-    return {
+    let config = {
         entry: {
-            '002': './main.js'
+            '004-0': './main.js'
         },
         output: {
             path: './js',
-            filename: options.dev ? '[name].js' : '[name].min.js'
+            filename: '[name].min.js'
         },
         module: {
             rules: [
@@ -22,9 +24,10 @@ module.exports = (options) => {
                 }
             ]
         },
-
-
+        
         devtool: false,
         context: __dirname
     }
+
+    return config
 }

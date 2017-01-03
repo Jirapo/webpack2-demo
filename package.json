@@ -2,17 +2,20 @@
   "name": "webpack2-test",
   "version": "1.0.0",
   "scripts": {
-    "001": "webpack  --config demos/001/webpack.config.js --env.dev",
-    "001-p": "webpack -p --config demos/001/webpack.config.js --env",
-    "001-0": "webpack  --config demos/001-0/webpack.config.js --env.dev",
-    "001-0-p": "webpack -p --config demos/001-0/webpack.config.js --env",
-    "002": "webpack  --config demos/002/webpack.config.js --env.dev",
-    "002-p": "webpack -p --config demos/002/webpack.config.js --env",
-    "003": "webpack  --config demos/003/webpack.config.js --env.dev",
-    "003-p": "webpack -p --config demos/003/webpack.config.js --env",
-    "004": "webpack --config demos/004/webpack.config.js --env",
-    "005": "webpack -p --config demos/005/webpack.config.js ",
-    "006": "webpack --config demos/006/webpack.config.js --watch",
+    "001": "./node_modules/.bin/webpack  --config demos/001/webpack.config.js --env.dev",
+    "001-p": "./node_modules/.bin/webpack -p --config demos/001/webpack.config.js --env",
+    "001-0": "./node_modules/.bin/webpack  --config demos/001-0/webpack.config.js --env.dev",
+    "001-0-p": "./node_modules/.bin/webpack -p --config demos/001-0/webpack.config.js --env",
+    "002": "./node_modules/.bin/webpack  --config demos/002/webpack.config.js --env.dev",
+    "002-p": "./node_modules/.bin/webpack -p --config demos/002/webpack.config.js --env",
+    "003": "./node_modules/.bin/webpack  --config demos/003/webpack.config.js --env.dev",
+    "003-p": "./node_modules/.bin/webpack -p --config demos/003/webpack.config.js --env",
+    "004": "./node_modules/.bin/webpack --config demos/004/webpack.config.js --env",
+    "004-0-p": "./node_modules/.bin/webpack -p --config demos/004-0/webpack.config.js ",
+    "01-04": "./node_modules/.bin/webpack  --config demos/01-04.webpack.config.js --env.dev",
+    "01-04-p": "./node_modules/.bin/webpack -p --config demos/01-04.webpack.config.js --env",
+    "005": "./node_modules/.bin/webpack -p --config demos/005/webpack.config.js ",
+    "006": "./node_modules/.bin/webpack --config demos/006/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -34,5 +37,5 @@
     "webpack": "^2.2.0-rc.3"
   },
   "description": "webpack2 new features attempt"
-  
+
 }
